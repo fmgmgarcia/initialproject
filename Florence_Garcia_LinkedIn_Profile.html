@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Florence Garcia — Senior Scrum Master & Agile Coach</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0D1F3C;
+    --navy2: #162844;
+    --blue: #1A5FA8;
+    --blue-light: #2E7DD1;
+    --gold: #C9942A;
+    --gold-light: #E8B84B;
+    --cream: #F7F4EF;
+    --cream2: #EDE9E1;
+    --white: #FFFFFF;
+    --text: #1A1A2E;
+    --muted: #6B7280;
+    --line: rgba(201,148,42,0.25);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 80% 50%, rgba(26,95,168,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 80% at 10% 80%, rgba(201,148,42,0.10) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    min-height: 420px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-left {
+    padding: 64px 56px 64px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,148,42,0.15);
+    border: 1px solid rgba(201,148,42,0.35);
+    border-radius: 2px;
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 24px;
+    width: fit-content;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 62px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.0;
+    letter-spacing: -1px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  .hero-name span {
+    color: var(--gold-light);
+  }
+
+  .hero-title {
+    margin-top: 18px;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.3px;
+    line-height: 1.6;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .hero-title strong {
+    color: rgba(255,255,255,0.9);
+    font-weight: 600;
+  }
+
+  .hero-certs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 28px;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  .cert-badge {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 3px;
+    padding: 5px 12px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.5px;
+  }
+
+  .cert-badge.gold {
+    background: rgba(201,148,42,0.18);
+    border-color: rgba(201,148,42,0.4);
+    color: var(--gold-light);
+  }
+
+  .hero-right {
+    background: rgba(255,255,255,0.04);
+    border-left: 1px solid rgba(255,255,255,0.07);
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    animation: fadeUp 0.6s 0.25s ease both;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .contact-item:last-child { border-bottom: none; }
+
+  .contact-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 6px;
+    background: rgba(26,95,168,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 15px;
+  }
+
+  .contact-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.35);
+    font-weight: 600;
+    margin-bottom: 3px;
+  }
+
+  .contact-value {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 400;
+  }
+
+  .contact-value a {
+    color: var(--gold-light);
+    text-decoration: none;
+  }
+
+  .open-badge {
+    margin-top: 20px;
+    background: linear-gradient(135deg, rgba(26,95,168,0.4), rgba(26,95,168,0.2));
+    border: 1px solid rgba(46,125,209,0.5);
+    border-radius: 8px;
+    padding: 14px 18px;
+    text-align: center;
+  }
+
+  .open-badge .ob-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.45);
+    font-weight: 600;
+  }
+
+  .open-badge .ob-status {
+    font-size: 13px;
+    font-weight: 600;
+    color: #6EE7B7;
+    margin-top: 4px;
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--gold);
+    display: flex;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .stat {
+    flex: 1;
+    max-width: 220px;
+    padding: 22px 20px;
+    text-align: center;
+    border-right: 1px solid rgba(0,0,0,0.1);
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .stat:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(13,31,60,0.7);
+    margin-top: 4px;
+  }
+
+  /* ── MAIN CONTENT ── */
+  .main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 48px 80px;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-top: 64px;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ── SUMMARY ── */
+  .summary-box {
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 44px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .summary-box::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 220px;
+    color: rgba(201,148,42,0.06);
+    position: absolute;
+    top: -40px;
+    left: 20px;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .summary-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.8);
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+  }
+
+  .summary-text strong {
+    color: var(--gold-light);
+    font-weight: 600;
+  }
+
+  .summary-clients {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .client-pill {
+    background: rgba(201,148,42,0.12);
+    border: 1px solid rgba(201,148,42,0.3);
+    border-radius: 30px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gold-light);
+    letter-spacing: 0.3px;
+  }
+
+  /* ── EXPERIENCE ── */
+  .exp-list { display: flex; flex-direction: column; gap: 2px; }
+
+  .exp-card {
+    background: var(--white);
+    border-radius: 10px;
+    border: 1px solid var(--cream2);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .exp-card:hover {
+    box-shadow: 0 8px 32px rgba(13,31,60,0.08);
+    border-color: rgba(201,148,42,0.25);
+  }
+
+  .exp-header {
+    display: grid;
+    grid-template-columns: 4px 1fr auto;
+    align-items: stretch;
+  }
+
+  .exp-accent {
+    background: var(--blue);
+    width: 4px;
+    flex-shrink: 0;
+  }
+
+  .exp-accent.gold { background: var(--gold); }
+  .exp-accent.teal { background: #0E8A7A; }
+
+  .exp-meta {
+    padding: 22px 28px;
+    flex: 1;
+  }
+
+  .exp-role {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.3;
+  }
+
+  .exp-org {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blue);
+    margin-top: 4px;
+  }
+
+  .exp-clients-inline {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 3px;
+    font-style: italic;
+  }
+
+  .exp-period {
+    padding: 22px 28px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .exp-date {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    white-space: nowrap;
+  }
+
+  .exp-tag {
+    background: var(--cream2);
+    border-radius: 3px;
+    padding: 3px 9px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+
+  .exp-tag.current {
+    background: #D1FAE5;
+    color: #065F46;
+  }
+
+  .exp-bullets {
+    padding: 0 28px 24px 32px;
+    display: none;
+  }
+
+  .exp-card.open .exp-bullets { display: block; }
+
+  .exp-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    border-top: 1px solid var(--cream2);
+    padding: 10px 28px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--blue);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.5px;
+    transition: background 0.15s;
+  }
+
+  .exp-toggle:hover { background: var(--cream); }
+
+  .exp-toggle .arrow {
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+
+  .exp-card.open .exp-toggle .arrow { transform: rotate(180deg); }
+
+  .exp-bullets ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .exp-bullets li {
+    padding: 5px 0 5px 18px;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: #374151;
+    position: relative;
+  }
+
+  .exp-bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 11px;
+    top: 7px;
+  }
+
+  .exp-bullets li strong { color: var(--navy); font-weight: 600; }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .skill-group {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 24px;
+    border: 1px solid var(--cream2);
+    transition: box-shadow 0.2s;
+  }
+
+  .skill-group:hover { box-shadow: 0 4px 20px rgba(13,31,60,0.06); }
+
+  .sg-title {
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--cream2);
+  }
+
+  .sg-item {
+    font-size: 13px;
+    color: var(--text);
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sg-item::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--blue-light);
+    flex-shrink: 0;
+  }
+
+  /* ── CERTIFICATIONS ── */
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+
+  .cert-card {
+    background: var(--navy);
+    border-radius: 10px;
+    padding: 22px 18px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .cert-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(13,31,60,0.25);
+  }
+
+  .cert-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+  }
+
+  .cert-icon { font-size: 26px; margin-bottom: 10px; }
+
+  .cert-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.3;
+    margin-bottom: 5px;
+  }
+
+  .cert-issuer {
+    font-size: 10.5px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* ── ATS KEYWORDS ── */
+  .keywords-box {
+    background: var(--white);
+    border: 1px solid var(--cream2);
+    border-radius: 10px;
+    padding: 32px 36px;
+  }
+
+  .kw-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .kw-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .kw-tag {
+    background: var(--cream);
+    border: 1.5px solid var(--cream2);
+    border-radius: 4px;
+    padding: 7px 14px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--navy);
+    transition: all 0.15s;
+    cursor: default;
+  }
+
+  .kw-tag:hover {
+    background: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+  }
+
+  .kw-tag.primary {
+    background: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+    font-size: 13.5px;
+  }
+
+  /* ── TARGET ROLES ── */
+  .roles-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .role-card {
+    background: var(--white);
+    border: 1px solid var(--cream2);
+    border-radius: 10px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.2s;
+  }
+
+  .role-card:hover {
+    border-color: var(--blue);
+    box-shadow: 0 4px 16px rgba(26,95,168,0.1);
+  }
+
+  .role-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 900;
+    color: var(--gold-light);
+    flex-shrink: 0;
+  }
+
+  .role-info {}
+
+  .role-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .role-range {
+    font-size: 12px;
+    color: var(--blue);
+    margin-top: 2px;
+    font-weight: 500;
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* ── LINKEDIN COPY SECTION ── */
+  .linkedin-section {
+    background: linear-gradient(135deg, var(--navy) 0%, #162844 100%);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .linkedin-tabs {
+    display: flex;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .li-tab {
+    padding: 16px 28px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.4);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.15s;
+  }
+
+  .li-tab.active {
+    color: var(--gold-light);
+    border-bottom-color: var(--gold);
+  }
+
+  .li-content { padding: 36px 40px; display: none; }
+  .li-content.active { display: block; }
+
+  .li-field {
+    margin-bottom: 28px;
+  }
+
+  .li-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 10px;
+  }
+
+  .li-value {
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .li-value strong {
+    color: var(--gold-light);
+  }
+
+  .copy-btn {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 6px;
+    padding: 9px 18px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'DM Sans', sans-serif;
+    margin-top: 12px;
+  }
+
+  .copy-btn:hover {
+    background: rgba(201,148,42,0.2);
+    border-color: rgba(201,148,42,0.4);
+    color: var(--gold-light);
+  }
+
+  .copy-btn.copied {
+    background: rgba(110,231,183,0.15);
+    border-color: rgba(110,231,183,0.4);
+    color: #6EE7B7;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-list { display: flex; flex-direction: column; gap: 12px; }
+
+  .edu-card {
+    background: var(--white);
+    border: 1px solid var(--cream2);
+    border-radius: 10px;
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: box-shadow 0.2s;
+  }
+
+  .edu-card:hover { box-shadow: 0 4px 16px rgba(13,31,60,0.06); }
+
+  .edu-degree {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .edu-school {
+    font-size: 13px;
+    color: var(--blue);
+    margin-top: 3px;
+    font-weight: 500;
+  }
+
+  .edu-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    flex-shrink: 0;
+    margin-left: 20px;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 28px;
+    font-size: 12px;
+    margin-top: 80px;
+  }
+
+  .footer a { color: var(--gold-light); text-decoration: none; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── PRINT / RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-right { border-left: none; border-top: 1px solid rgba(255,255,255,0.07); }
+    .hero-left { padding: 48px 32px 32px; }
+    .hero-name { font-size: 44px; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .certs-grid { grid-template-columns: 1fr 1fr; }
+    .roles-list { grid-template-columns: 1fr; }
+    .main { padding: 0 24px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<header class="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-tag">&#9679; Available for Remote Contracts Worldwide</div>
+      <h1 class="hero-name">Florence<br><span>Garcia</span></h1>
+      <p class="hero-title">
+        <strong>Senior Scrum Master · Agile Coach · Technical Program Manager</strong><br>
+        20+ years driving enterprise Agile transformation for Fortune 500 companies across<br>
+        Financial Services · Oil &amp; Gas · Healthcare · Technology · Utilities
+      </p>
+      <div class="hero-certs">
+        <span class="cert-badge gold">PMP®</span>
+        <span class="cert-badge gold">CSM®</span>
+        <span class="cert-badge gold">SAFe® Agilist</span>
+        <span class="cert-badge gold">CSPO®</span>
+        <span class="cert-badge">ISTQB®</span>
+        <span class="cert-badge">ITIL®</span>
+        <span class="cert-badge">Six Sigma</span>
+        <span class="cert-badge">IIBA</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="contact-item">
+        <div class="contact-icon">✉</div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value"><a href="mailto:fmgmgarcia@gmail.com">fmgmgarcia@gmail.com</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-label">Phone / WhatsApp</div>
+          <div class="contact-value">+55 41 9890-5569</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🔗</div>
+        <div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value"><a href="https://linkedin.com/in/florencegarcia2021" target="_blank">linkedin.com/in/florencegarcia2021</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-label">Location</div>
+          <div class="contact-value">Curitiba, Brazil — Remote Worldwide</div>
+        </div>
+      </div>
+      <div class="open-badge">
+        <div class="ob-label">Employment Status</div>
+        <div class="ob-status">✓ Open to Remote USD Contracts · C2C · B2B</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══ STATS BAR ══ -->
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-num">20+</div>
+    <div class="stat-label">Years Experience</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">8+</div>
+    <div class="stat-label">Certifications</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">6</div>
+    <div class="stat-label">Fortune 500 Clients</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">5</div>
+    <div class="stat-label">Industries</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">50+</div>
+    <div class="stat-label">Agile Practitioners Coached</div>
+  </div>
+</div>
+
+<!-- ══ MAIN ══ -->
+<main class="main">
+
+  <!-- SUMMARY -->
+  <section class="section" id="s-summary">
+    <div class="section-header">
+      <span class="section-label">About</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="summary-box">
+      <p class="summary-text">
+        Senior Agile practitioner with <strong>20+ years</strong> of hands-on experience leading enterprise-scale digital transformation programs for some of the world's most recognized organizations.
+        I bring a rare combination of <strong>deep technical credibility</strong> (APIs, Azure DevOps, Jira, QA automation) and <strong>executive presence</strong> — having worked directly with US-based stakeholders at
+        PwC, ExxonMobil, GSK, Johnson &amp; Johnson, and Mastercard across distributed, cross-functional delivery teams.
+        <br><br>
+        My approach centers on removing organizational friction, elevating team Agile maturity, and connecting delivery to measurable business outcomes.
+        I have led Agile transformations at portfolio scale using <strong>SAFe, Scrum, and Kanban</strong>, mentored 50+ practitioners, and consistently improved sprint velocity, forecast accuracy, and stakeholder confidence.
+        <br><br>
+        I am available immediately for <strong>remote USD-based contractor engagements</strong> (C2C / B2B) with US, Canadian, and European organizations.
+        Fluent in English. MBA from George Washington University.
+      </p>
+      <div class="summary-clients">
+        <span class="client-pill">PricewaterhouseCoopers (PwC US)</span>
+        <span class="client-pill">ExxonMobil</span>
+        <span class="client-pill">Johnson &amp; Johnson</span>
+        <span class="client-pill">GSK</span>
+        <span class="client-pill">Mastercard</span>
+        <span class="client-pill">HSBC</span>
+        <span class="client-pill">Bradesco</span>
+        <span class="client-pill">Briggs &amp; Stratton</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="s-exp">
+    <div class="section-header">
+      <span class="section-label">Experience</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="exp-list">
+
+      <!-- TCS -->
+      <div class="exp-card" id="exp-tcs">
+        <div class="exp-header">
+          <div class="exp-accent gold"></div>
+          <div class="exp-meta">
+            <div class="exp-role">Senior Scrum Master / Business Analyst / Product Owner</div>
+            <div class="exp-org">TCS — Tata Consulting Services</div>
+            <div class="exp-clients-inline">Clients: PricewaterhouseCoopers (PwC US) · GSK · Johnson &amp; Johnson</div>
+          </div>
+          <div class="exp-period">
+            <div class="exp-date">Aug 2023 – Present</div>
+            <div class="exp-tag current">Current</div>
+          </div>
+        </div>
+        <button class="exp-toggle" onclick="toggleExp('exp-tcs')">
+          <span class="arrow">▼</span> View Achievements
+        </button>
+        <div class="exp-bullets">
+          <ul>
+            <li>Served as embedded Scrum Master and BA on a high-visibility US digital transformation program, partnering directly with <strong>PwC US business and engineering stakeholders</strong> to drive API data flow delivery.</li>
+            <li>Authored <strong>100+ user stories</strong> and designed to-be process flows, reducing requirements rework by ~30% through structured business-IT alignment.</li>
+            <li>Managed end-to-end test strategies and defect triage in <strong>Jira and Azure DevOps</strong>, achieving on-time delivery across 3 consecutive program increments.</li>
+            <li>Onboarded and coached newly formed Scrum teams at GSK and J&amp;J, embedding Agile best practices from Day 1.</li>
+            <li><strong>Improved sprint predictability and team velocity by 25%+</strong> within 2 quarters via structured backlog refinement and Definition of Done practices.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ExxonMobil -->
+      <div class="exp-card" id="exp-exxon">
+        <div class="exp-header">
+          <div class="exp-accent"></div>
+          <div class="exp-meta">
+            <div class="exp-role">Agile Coach / Scrum Master</div>
+            <div class="exp-org">ExxonMobil</div>
+            <div class="exp-clients-inline">Enterprise Agile Transformation — Oil &amp; Gas</div>
+          </div>
+          <div class="exp-period">
+            <div class="exp-date">Aug 2021 – Aug 2023</div>
+            <div class="exp-tag">2 yrs</div>
+          </div>
+        </div>
+        <button class="exp-toggle" onclick="toggleExp('exp-exxon')">
+          <span class="arrow">▼</span> View Achievements
+        </button>
+        <div class="exp-bullets">
+          <ul>
+            <li>Led Agile transformation for one of the world's largest energy companies, coaching <strong>5+ cross-functional product teams</strong> and senior leadership on SAFe and Scrum adoption.</li>
+            <li>Aligned <strong>8 teams across 2 value streams</strong> to a shared delivery cadence — reducing program-level blockers by 40%.</li>
+            <li>Delivered Agile training workshops for <strong>50+ practitioners</strong> (Scrum Masters, POs, BAs), measurably accelerating organizational maturity.</li>
+            <li>Established OKR-linked KPIs and empirical velocity tracking, enabling <strong>executive-level dashboards</strong> that improved forecast confidence at C-suite level.</li>
+            <li>Mentored 10+ practitioners into independent Scrum Masters and POs, reducing dependency on external coaching within 18 months.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Wipro -->
+      <div class="exp-card" id="exp-wipro">
+        <div class="exp-header">
+          <div class="exp-accent teal"></div>
+          <div class="exp-meta">
+            <div class="exp-role">Agile Coach / Scrum Master / QA Lead</div>
+            <div class="exp-org">Wipro</div>
+            <div class="exp-clients-inline">Clients: Mastercard · Bradesco — Fintech &amp; Payments</div>
+          </div>
+          <div class="exp-period">
+            <div class="exp-date">Dec 2019 – Aug 2021</div>
+            <div class="exp-tag">~2 yrs</div>
+          </div>
+        </div>
+        <button class="exp-toggle" onclick="toggleExp('exp-wipro')">
+          <span class="arrow">▼</span> View Achievements
+        </button>
+        <div class="exp-bullets">
+          <ul>
+            <li>Coached Scrum teams at two major financial clients through full delivery cycles, resolving impediments and improving team metrics via structured retrospectives.</li>
+            <li><strong>Improved sprint completion rate from ~65% to 90%+</strong> over 3 quarters via capacity-based planning and retrospective action tracking.</li>
+            <li>Led QA team of 6 in designing test suites for the <strong>Bradesco PIX real-time payments platform</strong> using HP ALM, Jira, and Azure DevOps.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Briggs -->
+      <div class="exp-card" id="exp-briggs">
+        <div class="exp-header">
+          <div class="exp-accent"></div>
+          <div class="exp-meta">
+            <div class="exp-role">IT Manager / Project Manager</div>
+            <div class="exp-org">Briggs &amp; Stratton (US)</div>
+            <div class="exp-clients-inline">LATAM IT Operations — SOX Compliance</div>
+          </div>
+          <div class="exp-period">
+            <div class="exp-date">Apr 2017 – Jul 2019</div>
+            <div class="exp-tag">2 yrs</div>
+          </div>
+        </div>
+        <button class="exp-toggle" onclick="toggleExp('exp-briggs')">
+          <span class="arrow">▼</span> View Achievements
+        </button>
+        <div class="exp-bullets">
+          <ul>
+            <li>Managed LATAM IT operations (service desk N1/N2, infrastructure, applications, SOX compliance) for a US publicly traded manufacturer.</li>
+            <li>Led transition from waterfall to Agile methodology across project portfolio, <strong>reducing average delivery time by 20%</strong>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Earlier -->
+      <div class="exp-card" id="exp-earlier">
+        <div class="exp-header">
+          <div class="exp-accent"></div>
+          <div class="exp-meta">
+            <div class="exp-role">Finance Operations Manager · IT Business Analyst · Project Manager</div>
+            <div class="exp-org">Solvay · HSBC</div>
+            <div class="exp-clients-inline">Financial Services · Chemical / Specialty Materials</div>
+          </div>
+          <div class="exp-period">
+            <div class="exp-date">2014 – 2017</div>
+            <div class="exp-tag">3 yrs</div>
+          </div>
+        </div>
+        <button class="exp-toggle" onclick="toggleExp('exp-earlier')">
+          <span class="arrow">▼</span> View Achievements
+        </button>
+        <div class="exp-bullets">
+          <ul>
+            <li><strong>HSBC:</strong> Led financial compliance and credit strategy IT projects, managing cross-functional teams of architects, developers, DBAs, and QA testers in a regulated environment.</li>
+            <li><strong>Solvay:</strong> Managed SSC operations using SAP for all US chemical plants, achieving 98%+ on-time SLA across a 20-person team consistently.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="s-skills">
+    <div class="section-header">
+      <span class="section-label">Core Competencies</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="sg-title">Agile &amp; Delivery</div>
+        <div class="sg-item">SAFe (Scaled Agile Framework)</div>
+        <div class="sg-item">Scrum · Kanban · Waterfall</div>
+        <div class="sg-item">PI Planning &amp; Program Execution</div>
+        <div class="sg-item">Backlog &amp; Release Management</div>
+        <div class="sg-item">OKRs, KPIs &amp; Velocity Tracking</div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-title">Leadership &amp; Stakeholders</div>
+        <div class="sg-item">C-Suite / VP Stakeholder Management</div>
+        <div class="sg-item">Remote Cross-functional Teams</div>
+        <div class="sg-item">Agile Coaching &amp; Mentoring</div>
+        <div class="sg-item">Organizational Change Management</div>
+        <div class="sg-item">Portfolio &amp; Program Management</div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-title">Technical Tools</div>
+        <div class="sg-item">Jira · Azure DevOps (ADO) · Confluence</div>
+        <div class="sg-item">Rally · TFS · ALM HP</div>
+        <div class="sg-item">Postman · SoapUI (API Testing)</div>
+        <div class="sg-item">SAP MM/PP/QM/FI/CO</div>
+        <div class="sg-item">JavaScript · Python · Oracle · SQL</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="section" id="s-certs">
+    <div class="section-header">
+      <span class="section-label">Certifications</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="certs-grid">
+      <div class="cert-card">
+        <div class="cert-icon">🏆</div>
+        <div class="cert-name">PMP®</div>
+        <div class="cert-issuer">PMI</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">⚡</div>
+        <div class="cert-name">SAFe® 5 Agilist</div>
+        <div class="cert-issuer">Scaled Agile</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🔄</div>
+        <div class="cert-name">CSM® / PSM I</div>
+        <div class="cert-issuer">Scrum Alliance / Scrum.org</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">📋</div>
+        <div class="cert-name">CSPO®</div>
+        <div class="cert-issuer">Scrum Alliance</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🧪</div>
+        <div class="cert-name">ISTQB® CTFL</div>
+        <div class="cert-issuer">ISTQB</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">📊</div>
+        <div class="cert-name">Business Analysis</div>
+        <div class="cert-issuer">IIBA</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">⚙️</div>
+        <div class="cert-name">ITIL® Foundation v3</div>
+        <div class="cert-issuer">Axelos</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">📉</div>
+        <div class="cert-name">Six Sigma Yellow Belt</div>
+        <div class="cert-issuer">IASSC</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TARGET ROLES -->
+  <section class="section" id="s-roles">
+    <div class="section-header">
+      <span class="section-label">Target Roles — US Remote Market</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="roles-list">
+      <div class="role-card">
+        <div class="role-num">1</div>
+        <div class="role-info">
+          <div class="role-title">Senior Scrum Master (Remote)</div>
+          <div class="role-range">$90K – $130K/yr · $65–$90/hr</div>
+        </div>
+      </div>
+      <div class="role-card">
+        <div class="role-num">2</div>
+        <div class="role-info">
+          <div class="role-title">Enterprise Agile Coach (Remote)</div>
+          <div class="role-range">$110K – $150K/yr · $80–$110/hr</div>
+        </div>
+      </div>
+      <div class="role-card">
+        <div class="role-num">3</div>
+        <div class="role-info">
+          <div class="role-title">Technical Program Manager (Remote)</div>
+          <div class="role-range">$120K – $160K/yr · $85–$115/hr</div>
+        </div>
+      </div>
+      <div class="role-card">
+        <div class="role-num">4</div>
+        <div class="role-info">
+          <div class="role-title">Agile Delivery Manager / Delivery Lead</div>
+          <div class="role-range">$100K – $140K/yr</div>
+        </div>
+      </div>
+      <div class="role-card" style="grid-column: 1 / -1;">
+        <div class="role-num">5</div>
+        <div class="role-info">
+          <div class="role-title">Digital Transformation Program Manager</div>
+          <div class="role-range">$120K – $160K/yr · C2C / B2B Contractor</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATS KEYWORDS -->
+  <section class="section" id="s-keywords">
+    <div class="section-header">
+      <span class="section-label">ATS Keywords</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="keywords-box">
+      <div class="kw-title">Top keywords to include in your LinkedIn &amp; applications</div>
+      <div class="kw-cloud">
+        <span class="kw-tag primary">Scrum Master</span>
+        <span class="kw-tag primary">Agile Coach</span>
+        <span class="kw-tag primary">SAFe</span>
+        <span class="kw-tag primary">Digital Transformation</span>
+        <span class="kw-tag primary">Program Manager</span>
+        <span class="kw-tag">Azure DevOps</span>
+        <span class="kw-tag">Jira</span>
+        <span class="kw-tag">Agile Transformation</span>
+        <span class="kw-tag">Stakeholder Management</span>
+        <span class="kw-tag">Cross-functional Teams</span>
+        <span class="kw-tag">PI Planning</span>
+        <span class="kw-tag">Backlog Management</span>
+        <span class="kw-tag">API Delivery</span>
+        <span class="kw-tag">Remote Leadership</span>
+        <span class="kw-tag">Continuous Improvement</span>
+        <span class="kw-tag">Servant Leadership</span>
+        <span class="kw-tag">Sprint Planning</span>
+        <span class="kw-tag">Kanban</span>
+        <span class="kw-tag">OKRs</span>
+        <span class="kw-tag">PMP</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINKEDIN COPY-PASTE -->
+  <section class="section" id="s-linkedin">
+    <div class="section-header">
+      <span class="section-label">LinkedIn — Ready to Copy &amp; Paste</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="linkedin-section">
+      <div class="linkedin-tabs">
+        <div class="li-tab active" onclick="showTab('headline')">Headline</div>
+        <div class="li-tab" onclick="showTab('about')">About / Summary</div>
+        <div class="li-tab" onclick="showTab('tips')">Profile Tips</div>
+      </div>
+
+      <div class="li-content active" id="tab-headline">
+        <div class="li-field">
+          <div class="li-label">Recommended LinkedIn Headline</div>
+          <div class="li-value" id="headline-text">Senior Scrum Master &amp; Agile Coach | SAFe® | PMP® | PwC US · ExxonMobil · Mastercard | Enterprise Agile Transformation | Open to Remote Global</div>
+          <button class="copy-btn" onclick="copyText('headline-text', this)">Copy Headline</button>
+        </div>
+        <div class="li-field">
+          <div class="li-label">Alternative Headline (startup focus)</div>
+          <div class="li-value" id="headline2-text">Agile Coach &amp; Technical Program Manager | 20+ Years | PMP® · CSM® · SAFe® | Fortune 500 Delivery | Remote USD Contractor</div>
+          <button class="copy-btn" onclick="copyText('headline2-text', this)">Copy Headline</button>
+        </div>
+      </div>
+
+      <div class="li-content" id="tab-about">
+        <div class="li-field">
+          <div class="li-label">About Section (paste directly into LinkedIn)</div>
+          <div class="li-value" id="about-text">
+            I'm an Agile Coach, Scrum Master, and Technical Program Manager with <strong>20+ years</strong> of experience leading complex digital transformation programs for Fortune 500 organizations across Financial Services, Oil &amp; Gas, Healthcare, Utilities, and Technology.<br><br>
+            Throughout my career, I've partnered directly with US stakeholders at <strong>PricewaterhouseCoopers (PwC US), ExxonMobil, GSK, Johnson &amp; Johnson, Mastercard, and HSBC</strong> — managing distributed cross-functional teams, API delivery pipelines, and end-to-end Agile program execution.<br><br>
+            <strong>What I bring to your organization:</strong><br>
+            ✦ Enterprise Agile transformations (SAFe, Scrum, Kanban) from team to portfolio level<br>
+            ✦ Sprint velocity improvements of 25–40% through structured coaching and metrics<br>
+            ✦ Stakeholder management at C-Suite and VP level in US companies<br>
+            ✦ QA leadership and technical credibility (Azure DevOps, Jira, API testing)<br>
+            ✦ Mentoring 50+ Scrum Masters, POs, and BAs into high-performing practitioners<br><br>
+            🎓 Executive MBA — George Washington University<br>
+            📜 PMP® · CSM® · SAFe® Agilist · CSPO® · ISTQB® · ITIL® · Six Sigma Yellow Belt<br><br>
+            🌎 Based in Curitiba, Brazil · Fluent in English · Open to remote opportunities worldwide (C2C / B2B contractor)
+          </div>
+          <button class="copy-btn" onclick="copyText('about-text', this)">Copy About Section</button>
+        </div>
+      </div>
+
+      <div class="li-content" id="tab-tips">
+        <div class="li-field">
+          <div class="li-label">Action Checklist — Maximize Profile Visibility</div>
+          <div class="li-value">
+            <strong>1. Profile Photo</strong> — Professional headshot, plain background, confident expression. Profiles with photos get 21x more views.<br><br>
+            <strong>2. Banner Image</strong> — Use Canva (free) to create a banner with your name, titles, and PMP/SAFe/CSM logos. Dark navy background recommended.<br><br>
+            <strong>3. Open to Work</strong> — Enable with filters: Remote · Scrum Master · Agile Coach · Program Manager · Worldwide.<br><br>
+            <strong>4. Featured Section</strong> — Pin your certification badges (Credly links for PMP, SAFe, CSM) and one case study post about an Agile transformation result.<br><br>
+            <strong>5. Skills Section</strong> — Add all 20 ATS keywords listed above. Ask connections to endorse Scrum Master, SAFe, and Agile Coaching first.<br><br>
+            <strong>6. Recommendations</strong> — Request 2–3 recommendations in English from managers or colleagues at PwC, ExxonMobil, or Wipro engagements.<br><br>
+            <strong>7. Content Strategy</strong> — Post 1–2x per week on Agile leadership topics. Posts with personal insights or results ("I helped a team go from 65% to 90% sprint completion — here's how") get 5–10x the reach of generic reposts.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section" id="s-edu">
+    <div class="section-header">
+      <span class="section-label">Education</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="edu-list">
+      <div class="edu-card">
+        <div>
+          <div class="edu-degree">Executive MBA — Project Management</div>
+          <div class="edu-school">George Washington University, Washington DC</div>
+        </div>
+        <div class="edu-year">2007</div>
+      </div>
+      <div class="edu-card">
+        <div>
+          <div class="edu-degree">M.Sc. — Electronic Engineering</div>
+          <div class="edu-school">Aeronautical Technology Institute (ITA), Brazil</div>
+        </div>
+        <div class="edu-year">2001</div>
+      </div>
+      <div class="edu-card">
+        <div>
+          <div class="edu-degree">B.Sc. — Electronics Engineering</div>
+          <div class="edu-school">Federal University of Uberlândia</div>
+        </div>
+        <div class="edu-year">1998</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  Florence Garcia · Senior Scrum Master &amp; Agile Coach · <a href="mailto:fmgmgarcia@gmail.com">fmgmgarcia@gmail.com</a> · <a href="https://linkedin.com/in/florencegarcia2021" target="_blank">LinkedIn</a>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.section').forEach(s => observer.observe(s));
+
+  // Toggle experience bullets
+  function toggleExp(id) {
+    const card = document.getElementById(id);
+    card.classList.toggle('open');
+  }
+
+  // LinkedIn tabs
+  function showTab(name) {
+    document.querySelectorAll('.li-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.li-content').forEach(c => c.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    event.target.classList.add('active');
+  }
+
+  // Copy to clipboard
+  function copyText(id, btn) {
+    const el = document.getElementById(id);
+    const text = el.innerText || el.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+
+  // Auto-open first exp card
+  document.getElementById('exp-tcs').classList.add('open');
+</script>
+</body>
+</html>
